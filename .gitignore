@@ -7,3 +7,5 @@ server/dist
 app/.env
 server/.env
 .DS_Store
+server/package-lock.json
+app/package-lock.json

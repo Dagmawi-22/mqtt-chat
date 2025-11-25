@@ -23,7 +23,6 @@ export class UsersService {
       return user;
     } catch (error) {
       if (error.code === '23505') {
-        // Unique constraint violation
         throw new ConflictException('Username or email already exists');
       }
       throw error;

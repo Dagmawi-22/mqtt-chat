@@ -1,34 +1,31 @@
-import { Controller, Post, Get, Body, Param, Query } from '@nestjs/common';
+import { Controller, Post, Get, Body, Param, Query, ParseIntPipe } from '@nestjs/common';
 import { MessagesService } from './messages.service';
+import { SendMessageDto } from './dto/send-message.dto';
+import { GetConversationDto } from './dto/get-conversation.dto';
 
 @Controller('messages')
 export class MessagesController {
   constructor(private readonly messagesService: MessagesService) {}
 
   @Post()
-  async sendMessage(
-    @Body() body: { senderId: number; recipientId: number; content: string },
-  ) {
+  async sendMessage(@Body() sendMessageDto: SendMessageDto) {
     return this.messagesService.sendMessage(
-      body.senderId,
-      body.recipientId,
-      body.content,
+      sendMessageDto.senderId,
+      sendMessageDto.recipientId,
+      sendMessageDto.content,
     );
   }
 
   @Get('conversation')
-  async getConversation(
-    @Query('userId1') userId1: string,
-    @Query('userId2') userId2: string,
-  ) {
+  async getConversation(@Query() query: GetConversationDto) {
     return this.messagesService.getConversation(
-      parseInt(userId1),
-      parseInt(userId2),
+      query.userId1,
+      query.userId2,
     );
   }
 
   @Get('user/:userId')
-  async getUserMessages(@Param('userId') userId: string) {
-    return this.messagesService.getUserMessages(parseInt(userId));
+  async getUserMessages(@Param('userId', ParseIntPipe) userId: number) {
+    return this.messagesService.getUserMessages(userId);
   }
 }
