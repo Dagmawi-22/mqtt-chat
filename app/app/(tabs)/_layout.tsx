@@ -5,6 +5,7 @@ import { HapticTab } from '@/components/haptic-tab';
 import { IconSymbol } from '@/components/ui/icon-symbol';
 import { Colors } from '@/constants/theme';
 import { useColorScheme } from '@/hooks/use-color-scheme';
+import { AppColors } from '../../constants/colors';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -12,9 +13,17 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: '#000',
+        tabBarActiveTintColor: AppColors.primary,
+        tabBarInactiveTintColor: AppColors.textTertiary,
         headerShown: false,
         tabBarButton: HapticTab,
+        tabBarStyle: {
+          backgroundColor: 'rgba(255, 255, 255, 0.8)',
+          borderTopWidth: 0,
+          elevation: 0,
+          position: 'absolute',
+          paddingTop: 8,
+        },
       }}>
       <Tabs.Screen
         name="contacts"

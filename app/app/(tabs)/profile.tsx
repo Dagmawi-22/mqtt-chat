@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import { useChatContext } from "../../context/ChatContext";
 import { mockAvatarOptions } from "../../mock/data";
+import { AppColors } from "../../constants/colors";
 
 export default function ProfileScreen() {
   const { currentUser, updateCurrentUser } = useChatContext();
@@ -105,7 +106,7 @@ export default function ProfileScreen() {
             value={name}
             onChangeText={setName}
             editable={isEditing}
-            placeholderTextColor="#999"
+            placeholderTextColor={AppColors.textTertiary}
           />
         </View>
 
@@ -118,7 +119,7 @@ export default function ProfileScreen() {
             keyboardType="email-address"
             autoCapitalize="none"
             editable={isEditing}
-            placeholderTextColor="#999"
+            placeholderTextColor={AppColors.textTertiary}
           />
         </View>
 
@@ -135,7 +136,7 @@ export default function ProfileScreen() {
             multiline
             numberOfLines={3}
             editable={isEditing}
-            placeholderTextColor="#999"
+            placeholderTextColor={AppColors.textTertiary}
           />
         </View>
       </View>
@@ -146,7 +147,7 @@ export default function ProfileScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: AppColors.background,
   },
   header: {
     flexDirection: "row",
@@ -155,21 +156,21 @@ const styles = StyleSheet.create({
     padding: 16,
     paddingTop: 60,
     borderBottomWidth: 1,
-    borderBottomColor: "#eee",
+    borderBottomColor: AppColors.borderLight,
   },
   title: {
     fontSize: 32,
     fontWeight: "bold",
-    color: "#000",
+    color: AppColors.text,
   },
   editButton: {
-    backgroundColor: "#000",
+    backgroundColor: AppColors.primary,
     paddingHorizontal: 16,
     paddingVertical: 8,
     borderRadius: 20,
   },
   editButtonText: {
-    color: "#fff",
+    color: AppColors.white,
     fontSize: 16,
     fontWeight: "600",
   },
@@ -178,29 +179,30 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   cancelButton: {
-    backgroundColor: "#f0f0f0",
+    backgroundColor: AppColors.disabledBackground,
     paddingHorizontal: 16,
     paddingVertical: 8,
     borderRadius: 20,
   },
   cancelButtonText: {
-    color: "#666",
+    color: AppColors.textSecondary,
     fontSize: 16,
     fontWeight: "600",
   },
   saveButton: {
-    backgroundColor: "#000",
+    backgroundColor: AppColors.primary,
     paddingHorizontal: 16,
     paddingVertical: 8,
     borderRadius: 20,
   },
   saveButtonText: {
-    color: "#fff",
+    color: AppColors.white,
     fontSize: 16,
     fontWeight: "600",
   },
   content: {
     padding: 20,
+    paddingBottom: 100,
   },
   avatarSection: {
     alignItems: "center",
@@ -212,12 +214,12 @@ const styles = StyleSheet.create({
     borderRadius: 60,
     marginBottom: 16,
     borderWidth: 4,
-    borderColor: "#000",
+    borderColor: AppColors.primary,
   },
   avatarLabel: {
     fontSize: 16,
     fontWeight: "600",
-    color: "#000",
+    color: AppColors.text,
     marginBottom: 12,
   },
   avatarGrid: {
@@ -236,7 +238,7 @@ const styles = StyleSheet.create({
     padding: 2,
   },
   avatarSelected: {
-    borderColor: "#000",
+    borderColor: AppColors.primary,
   },
   avatarImage: {
     width: "100%",
@@ -249,21 +251,21 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 16,
     fontWeight: "600",
-    color: "#000",
+    color: AppColors.text,
     marginBottom: 8,
   },
   input: {
     borderWidth: 1,
-    borderColor: "#ddd",
+    borderColor: AppColors.border,
     borderRadius: 8,
     padding: 12,
     fontSize: 16,
-    backgroundColor: "#f9f9f9",
-    color: "#000",
+    backgroundColor: AppColors.inputBackground,
+    color: AppColors.text,
   },
   inputDisabled: {
-    backgroundColor: "#f0f0f0",
-    color: "#666",
+    backgroundColor: AppColors.disabledBackground,
+    color: AppColors.textSecondary,
   },
   bioInput: {
     height: 80,
@@ -273,7 +275,7 @@ const styles = StyleSheet.create({
     marginTop: 24,
   },
   statCard: {
-    backgroundColor: "#f9f9f9",
+    backgroundColor: AppColors.inputBackground,
     padding: 16,
     borderRadius: 12,
     alignItems: "center",
@@ -281,11 +283,11 @@ const styles = StyleSheet.create({
   statValue: {
     fontSize: 18,
     fontWeight: "600",
-    color: "#000",
+    color: AppColors.text,
     marginBottom: 4,
   },
   statLabel: {
     fontSize: 14,
-    color: "#666",
+    color: AppColors.textSecondary,
   },
 });

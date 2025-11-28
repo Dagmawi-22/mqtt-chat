@@ -13,6 +13,7 @@ import {
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useChatContext } from '../../context/ChatContext';
 import { Message } from '../../types/chat';
+import { AppColors } from '../../constants/colors';
 
 export default function ChatScreen() {
   const router = useRouter();
@@ -136,7 +137,7 @@ export default function ChatScreen() {
           value={messageText}
           onChangeText={setMessageText}
           multiline
-          placeholderTextColor="#999"
+          placeholderTextColor={AppColors.textTertiary}
         />
         <TouchableOpacity
           style={[styles.sendButton, !messageText.trim() && styles.sendButtonDisabled]}
@@ -153,7 +154,7 @@ export default function ChatScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: AppColors.background,
   },
   header: {
     flexDirection: 'row',
@@ -161,15 +162,15 @@ const styles = StyleSheet.create({
     padding: 12,
     paddingTop: 60,
     borderBottomWidth: 1,
-    borderBottomColor: '#eee',
-    backgroundColor: '#fff',
+    borderBottomColor: AppColors.borderLight,
+    backgroundColor: AppColors.background,
   },
   backButton: {
     marginRight: 8,
   },
   backButtonText: {
     fontSize: 28,
-    color: '#000',
+    color: AppColors.primary,
   },
   headerAvatar: {
     width: 40,
@@ -183,11 +184,11 @@ const styles = StyleSheet.create({
   headerName: {
     fontSize: 17,
     fontWeight: '600',
-    color: '#000',
+    color: AppColors.text,
   },
   headerStatus: {
     fontSize: 13,
-    color: '#666',
+    color: AppColors.textSecondary,
   },
   messagesList: {
     padding: 16,
@@ -208,11 +209,11 @@ const styles = StyleSheet.create({
     borderRadius: 16,
   },
   ownBubble: {
-    backgroundColor: '#000',
+    backgroundColor: AppColors.primary,
     borderBottomRightRadius: 4,
   },
   otherBubble: {
-    backgroundColor: '#E9E9EB',
+    backgroundColor: AppColors.messageBubbleOther,
     borderBottomLeftRadius: 4,
   },
   messageText: {
@@ -220,10 +221,10 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   ownMessageText: {
-    color: '#fff',
+    color: AppColors.white,
   },
   otherMessageText: {
-    color: '#000',
+    color: AppColors.text,
   },
   messageTime: {
     fontSize: 11,
@@ -233,40 +234,40 @@ const styles = StyleSheet.create({
     textAlign: 'right',
   },
   otherMessageTime: {
-    color: '#666',
+    color: AppColors.textSecondary,
   },
   inputContainer: {
     flexDirection: 'row',
     padding: 12,
     borderTopWidth: 1,
-    borderTopColor: '#eee',
-    backgroundColor: '#fff',
+    borderTopColor: AppColors.borderLight,
+    backgroundColor: AppColors.background,
     alignItems: 'center',
   },
   input: {
     flex: 1,
     borderWidth: 1,
-    borderColor: '#ddd',
+    borderColor: AppColors.border,
     borderRadius: 20,
     paddingHorizontal: 16,
     paddingVertical: 8,
     marginRight: 8,
     maxHeight: 100,
     fontSize: 16,
-    backgroundColor: '#f9f9f9',
-    color: '#000',
+    backgroundColor: AppColors.inputBackground,
+    color: AppColors.text,
   },
   sendButton: {
-    backgroundColor: '#000',
+    backgroundColor: AppColors.primary,
     borderRadius: 20,
     paddingHorizontal: 20,
     paddingVertical: 10,
   },
   sendButtonDisabled: {
-    backgroundColor: '#ccc',
+    backgroundColor: AppColors.disabled,
   },
   sendButtonText: {
-    color: '#fff',
+    color: AppColors.white,
     fontSize: 16,
     fontWeight: '600',
   },

@@ -69,7 +69,7 @@ export default function OnboardingScreen() {
             placeholder="Enter your name"
             value={name}
             onChangeText={setName}
-            placeholderTextColor="#999"
+            placeholderTextColor={AppColors.textTertiary}
           />
         </View>
 
@@ -82,7 +82,7 @@ export default function OnboardingScreen() {
             onChangeText={setEmail}
             keyboardType="email-address"
             autoCapitalize="none"
-            placeholderTextColor="#999"
+            placeholderTextColor={AppColors.textTertiary}
           />
         </View>
 
@@ -95,7 +95,7 @@ export default function OnboardingScreen() {
             onChangeText={setBio}
             multiline
             numberOfLines={3}
-            placeholderTextColor="#999"
+            placeholderTextColor={AppColors.textTertiary}
           />
         </View>
 

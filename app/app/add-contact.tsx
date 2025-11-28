@@ -11,6 +11,7 @@ import {
 import { useRouter } from 'expo-router';
 import { useChatContext } from '../context/ChatContext';
 import { mockAvatarOptions } from '../mock/data';
+import { AppColors } from '../constants/colors';
 
 export default function AddContactScreen() {
   const router = useRouter();
@@ -74,7 +75,7 @@ export default function AddContactScreen() {
             placeholder="Enter contact name"
             value={name}
             onChangeText={setName}
-            placeholderTextColor="#999"
+            placeholderTextColor={AppColors.textTertiary}
           />
         </View>
 
@@ -87,7 +88,7 @@ export default function AddContactScreen() {
             onChangeText={setEmail}
             keyboardType="email-address"
             autoCapitalize="none"
-            placeholderTextColor="#999"
+            placeholderTextColor={AppColors.textTertiary}
           />
         </View>
 
@@ -102,7 +103,7 @@ export default function AddContactScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: AppColors.background,
   },
   header: {
     flexDirection: 'row',
@@ -111,16 +112,16 @@ const styles = StyleSheet.create({
     padding: 16,
     paddingTop: 60,
     borderBottomWidth: 1,
-    borderBottomColor: '#eee',
+    borderBottomColor: AppColors.borderLight,
   },
   backButton: {
     fontSize: 16,
-    color: '#000',
+    color: AppColors.primary,
   },
   title: {
     fontSize: 20,
     fontWeight: '600',
-    color: '#000',
+    color: AppColors.text,
   },
   content: {
     padding: 20,
@@ -131,7 +132,7 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#000',
+    color: AppColors.text,
     marginBottom: 8,
   },
   avatarGrid: {
@@ -148,7 +149,7 @@ const styles = StyleSheet.create({
     padding: 2,
   },
   avatarSelected: {
-    borderColor: '#000',
+    borderColor: AppColors.primary,
   },
   avatarImage: {
     width: '100%',
@@ -157,22 +158,22 @@ const styles = StyleSheet.create({
   },
   input: {
     borderWidth: 1,
-    borderColor: '#ddd',
+    borderColor: AppColors.border,
     borderRadius: 8,
     padding: 12,
     fontSize: 16,
-    backgroundColor: '#f9f9f9',
-    color: '#000',
+    backgroundColor: AppColors.inputBackground,
+    color: AppColors.text,
   },
   button: {
-    backgroundColor: '#000',
+    backgroundColor: AppColors.primary,
     borderRadius: 8,
     padding: 16,
     alignItems: 'center',
     marginTop: 16,
   },
   buttonText: {
-    color: '#fff',
+    color: AppColors.white,
     fontSize: 18,
     fontWeight: '600',
   },

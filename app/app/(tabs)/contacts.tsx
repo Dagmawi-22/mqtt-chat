@@ -132,6 +132,7 @@ const styles = StyleSheet.create({
   },
   listContent: {
     paddingVertical: 8,
+    paddingBottom: 100,
   },
   contactItem: {
     flexDirection: 'row',
